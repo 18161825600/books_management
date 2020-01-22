@@ -1,8 +1,11 @@
 package com.example.books_management.pojo;
 
+import lombok.Data;
+
 import java.util.Date;
 import javax.persistence.*;
 
+@Data
 @Table(name = "t_favorite_book_list")
 public class FavoriteBookList {
     @Id
