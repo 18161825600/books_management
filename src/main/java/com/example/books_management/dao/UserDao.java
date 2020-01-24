@@ -32,7 +32,7 @@ public class UserDao {
 
     public User selectOneUserByOpenId(Long openId){
         Example example = new Example(User.class);
-        example.createCriteria().andEqualTo("open_id",openId);
+        example.createCriteria().andEqualTo("openId",openId);
         return userMapper.selectOneByExample(example);
     }
 

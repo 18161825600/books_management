@@ -19,7 +19,7 @@ public class BorrowBooks {
     private Long userId;
 
     /**
-     * 0续借1期限内未还2期限内归还3逾期归还4逾期未归还
+     * 1期限内未还2期限内归还3逾期归还4逾期未归还
      */
     private Short state;
 

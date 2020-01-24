@@ -36,13 +36,13 @@ public class ReturnBooksDao {
 
     public List<ReturnBooks> selectReturnBooksByUserId(Long userId){
         Example example = new Example(ReturnBooks.class);
-        example.createCriteria().andEqualTo("user_id",userId);
+        example.createCriteria().andEqualTo("userId",userId);
         return returnBooksMapper.selectByExample(example);
     }
 
     public List<ReturnBooks> selectReturnBooksByBookId(Long bookId){
         Example example = new Example(ReturnBooks.class);
-        example.createCriteria().andEqualTo("book_id",bookId);
+        example.createCriteria().andEqualTo("bookId",bookId);
         return returnBooksMapper.selectByExample(example);
     }
 
@@ -53,13 +53,13 @@ public class ReturnBooksDao {
 
     public Integer countReturnBookByUserId(Long userId){
         Example example = new Example(ReturnBooks.class);
-        example.createCriteria().andEqualTo("user_id",userId);
+        example.createCriteria().andEqualTo("userId",userId);
         return returnBooksMapper.selectCountByExample(example);
     }
 
     public Integer countReturnBookByBookId(Long bookId){
         Example example = new Example(ReturnBooks.class);
-        example.createCriteria().andEqualTo("book_id",bookId);
+        example.createCriteria().andEqualTo("bookId",bookId);
         return returnBooksMapper.selectCountByExample(example);
     }
 }

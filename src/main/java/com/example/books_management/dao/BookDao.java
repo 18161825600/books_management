@@ -46,19 +46,19 @@ public class BookDao {
 
     public List<Book> selectBookByBookName(String bookName){
         Example example = new Example(Book.class);
-        example.createCriteria().andLike("book_name","%"+bookName+"%");
+        example.createCriteria().andLike("bookName","%"+bookName+"%");
         return bookMapper.selectByExample(example);
     }
 
     public Book selectOneBookByBookName(String bookName){
         Example example = new Example(Book.class);
-        example.createCriteria().andEqualTo("book_name",bookName);
+        example.createCriteria().andEqualTo("bookName",bookName);
         return bookMapper.selectOneByExample(example);
     }
 
     public List<Book> selectBookByAuthorName(String authorName){
         Example example = new Example(Book.class);
-        example.createCriteria().andLike("author_name","%"+authorName+"%");
+        example.createCriteria().andLike("authorName","%"+authorName+"%");
         return bookMapper.selectByExample(example);
     }
 
@@ -69,13 +69,13 @@ public class BookDao {
 
     public Integer countByBookName(String bookName){
         Example example = new Example(Book.class);
-        example.createCriteria().andLike("book_name","%"+bookName+"%");
+        example.createCriteria().andLike("bookName","%"+bookName+"%");
         return bookMapper.selectCountByExample(example);
     }
 
     public Integer countByAuthorName(String authorName){
         Example example = new Example(Book.class);
-        example.createCriteria().andLike("author_name","%"+authorName+"%");
+        example.createCriteria().andLike("authorName","%"+authorName+"%");
         return bookMapper.selectCountByExample(example);
     }
 

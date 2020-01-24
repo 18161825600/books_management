@@ -32,13 +32,13 @@ public class FavoriteBookListDao {
 
     public List<FavoriteBookList> selectFavoriteByUserId(Long userId){
         Example example = new Example(FavoriteBookList.class);
-        example.createCriteria().andEqualTo("user_id",userId);
+        example.createCriteria().andEqualTo("userId",userId);
         return favoriteBookListMapper.selectByExample(example);
     }
 
     public List<FavoriteBookList> selectFavoriteByBookId(Long bookId){
         Example example = new Example(FavoriteBookList.class);
-        example.createCriteria().andEqualTo("book_id",bookId);
+        example.createCriteria().andEqualTo("bookId",bookId);
         return favoriteBookListMapper.selectByExample(example);
     }
 
@@ -49,13 +49,13 @@ public class FavoriteBookListDao {
 
     public Integer countFavoriteBookByUserId(Long userId){
         Example example = new Example(FavoriteBookList.class);
-        example.createCriteria().andEqualTo("user_id",userId);
+        example.createCriteria().andEqualTo("userId",userId);
         return favoriteBookListMapper.selectCountByExample(example);
     }
 
     public Integer countFavoriteBookByBookId(Long bookId){
         Example example = new Example(FavoriteBookList.class);
-        example.createCriteria().andEqualTo("book_id",bookId);
+        example.createCriteria().andEqualTo("bookId",bookId);
         return favoriteBookListMapper.selectCountByExample(example);
     }
 }

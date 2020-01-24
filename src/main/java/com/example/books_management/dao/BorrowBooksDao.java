@@ -36,13 +36,13 @@ public class BorrowBooksDao {
 
     public List<BorrowBooks> selectBorrowBooksByUserId(Long userId){
         Example example = new Example(BorrowBooks.class);
-        example.createCriteria().andEqualTo("user_id",userId);
+        example.createCriteria().andEqualTo("userId",userId);
         return borrowBooksMapper.selectByExample(example);
     }
 
     public List<BorrowBooks> selectBorrowBooksByBookId(Long bookId){
         Example example = new Example(BorrowBooks.class);
-        example.createCriteria().andEqualTo("book_id",bookId);
+        example.createCriteria().andEqualTo("bookId",bookId);
         return borrowBooksMapper.selectByExample(example);
     }
 
@@ -53,13 +53,13 @@ public class BorrowBooksDao {
 
     public Integer countBorrowBooksByUserId(Long userId){
         Example example = new Example(BorrowBooks.class);
-        example.createCriteria().andEqualTo("user_id",userId);
+        example.createCriteria().andEqualTo("userId",userId);
         return borrowBooksMapper.selectCountByExample(example);
     }
 
     public Integer countBorrowBooksByBookId(Long bookId){
         Example example = new Example(BorrowBooks.class);
-        example.createCriteria().andEqualTo("book_id",bookId);
+        example.createCriteria().andEqualTo("bookId",bookId);
         return borrowBooksMapper.selectCountByExample(example);
     }
 }
