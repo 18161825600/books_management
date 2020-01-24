@@ -1,11 +1,8 @@
 package com.example.books_management.pojo;
 
-import lombok.Data;
-
 import java.util.Date;
 import javax.persistence.*;
 
-@Data
 @Table(name = "t_book")
 public class Book {
     @Id
@@ -19,7 +16,7 @@ public class Book {
      * 图书的剩余数量
      */
     @Column(name = "surplus_number")
-    private String surplusNumber;
+    private Integer surplusNumber;
 
     @Column(name = "author_name")
     private String authorName;
@@ -78,7 +75,7 @@ public class Book {
      *
      * @return surplus_number - 图书的剩余数量
      */
-    public String getSurplusNumber() {
+    public Integer getSurplusNumber() {
         return surplusNumber;
     }
 
@@ -87,8 +84,8 @@ public class Book {
      *
      * @param surplusNumber 图书的剩余数量
      */
-    public void setSurplusNumber(String surplusNumber) {
-        this.surplusNumber = surplusNumber == null ? null : surplusNumber.trim();
+    public void setSurplusNumber(Integer surplusNumber) {
+        this.surplusNumber = surplusNumber;
     }
 
     /**

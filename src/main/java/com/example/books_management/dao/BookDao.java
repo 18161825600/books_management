@@ -1,6 +1,5 @@
 package com.example.books_management.dao;
 
-import com.example.books_management.BooksManagementApplication;
 import com.example.books_management.mapper.BookMapper;
 import com.example.books_management.pojo.Book;
 import org.springframework.beans.factory.annotation.Autowired;

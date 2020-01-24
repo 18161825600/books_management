@@ -7,7 +7,7 @@
     -->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="book_name" jdbcType="VARCHAR" property="bookName" />
-    <result column="surplus_number" jdbcType="VARCHAR" property="surplusNumber" />
+    <result column="surplus_number" jdbcType="INTEGER" property="surplusNumber" />
     <result column="author_name" jdbcType="VARCHAR" property="authorName" />
     <result column="book_price" jdbcType="DOUBLE" property="bookPrice" />
     <result column="brief_introduction" jdbcType="VARCHAR" property="briefIntroduction" />
