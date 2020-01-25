@@ -19,7 +19,7 @@ public class BorrowBooks {
     private Long userId;
 
     /**
-     * 1期限内未还2期限内归还3逾期归还4逾期未归还
+     * 0续借1期限内未还2期限内归还3逾期归还4逾期未归还
      */
     private Short state;
 
@@ -30,6 +30,12 @@ public class BorrowBooks {
 
     @Column(name = "update_time")
     private Date updateTime;
+
+    /**
+     * 借书到期时间
+     */
+    @Column(name = "due_time")
+    private Date dueTime;
 
     /**
      * @return id
@@ -131,5 +137,23 @@ public class BorrowBooks {
      */
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    /**
+     * 获取借书到期时间
+     *
+     * @return due_time - 借书到期时间
+     */
+    public Date getDueTime() {
+        return dueTime;
+    }
+
+    /**
+     * 设置借书到期时间
+     *
+     * @param dueTime 借书到期时间
+     */
+    public void setDueTime(Date dueTime) {
+        this.dueTime = dueTime;
     }
 }

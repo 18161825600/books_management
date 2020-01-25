@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -52,6 +53,11 @@ public class BorrowBooksServiceImpl implements BorrowBooksService {
                 borrowBooks.setState((short) 1);
                 borrowBooks.setCreateTime(new Date());
 
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(new Date());
+                calendar.roll(calendar.DAY_OF_YEAR,addBorrowBookRequest.getTerm());
+                borrowBooks.setDueTime(calendar.getTime());
+
                 return borrowBooksDao.insertBorrowBooks(borrowBooks);
             }else return -3;//押金不足
         }
@@ -73,6 +79,12 @@ public class BorrowBooksServiceImpl implements BorrowBooksService {
             borrowBooks.setTerm(borrowBooks.getTerm()+updateBorrowBookTermRequest.getTerm());
             borrowBooks.setUpdateTime(new Date());
             borrowBooks.setState((short)0);
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(borrowBooks.getDueTime());
+            calendar.roll(Calendar.DAY_OF_YEAR,updateBorrowBookTermRequest.getTerm());
+            borrowBooks.setDueTime(calendar.getTime());
+
             return borrowBooksDao.updateBorrowBooks(borrowBooks);
         }
     }
