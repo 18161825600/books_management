@@ -39,6 +39,11 @@ public class FavoriteBookListServiceImpl implements FavoriteBookListService {
     }
 
     @Override
+    public Integer deleteSomeFavoriteBook(List<Long> ids) {
+        return favoriteBookListDao.deleteSomeFavoriteBook(ids);
+    }
+
+    @Override
     public List<FavoriteBookListResponse> selectAllFavoriteBookList(Integer pageNum) {
         List<FavoriteBookList> favoriteBookLists = favoriteBookListDao.selectAllFavoriteBookList();
         PageHelper.startPage(pageNum,10);

@@ -22,6 +22,12 @@ public class FavoriteBookListDao {
         return favoriteBookListMapper.deleteByPrimaryKey(id);
     }
 
+    public Integer deleteSomeFavoriteBook(List<Long> ids){
+        Example example = new Example(FavoriteBookList.class);
+        example.createCriteria().andIn("id",ids);
+        return favoriteBookListMapper.deleteByExample(example);
+    }
+
     public List<FavoriteBookList> selectAllFavoriteBookList(){
         return favoriteBookListMapper.selectAll();
     }

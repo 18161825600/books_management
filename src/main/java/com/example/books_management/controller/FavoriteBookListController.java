@@ -23,6 +23,11 @@ public class FavoriteBookListController {
         return favoriteBookListService.deleteFavoriteBook(id);
     }
 
+    @DeleteMapping(value = "delete/some/borrow/book")
+    public Integer deleteSomeFavoriteBook(@RequestBody List<Long> ids){
+        return favoriteBookListService.deleteSomeFavoriteBook(ids);
+    }
+
     @GetMapping(value = "select/all/favoite/book")
     public List<FavoriteBookListResponse> selectAllFavoriteBookList(@RequestParam(value = "pageNum",defaultValue = "1")Integer pageNum){
         return favoriteBookListService.selectAllFavoriteBookList(pageNum);

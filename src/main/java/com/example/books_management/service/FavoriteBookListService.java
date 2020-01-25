@@ -10,6 +10,8 @@ public interface FavoriteBookListService {
 
     Integer deleteFavoriteBook(Long id);
 
+    Integer deleteSomeFavoriteBook(List<Long> ids);
+
     List<FavoriteBookListResponse> selectAllFavoriteBookList(Integer pageNum);
 
     FavoriteBookListResponse selectFavoriteBookById(Long id);
